@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript"
+src="./js/graph.js">
+</script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">App1</a>
+                </li>
+                <li>
+                    <a href="#">App2</a>
+                </li>
+                <li>
+                    <a href="#">App3</a>
+                </li>
+                <li>
+                    <a href="#">App4</a>
+                </li>
+                <li>
+                    <a href="#">App5</a>
+                </li>
+                <li>
+                    <a href="#">App6</a>
+                </li>
+                <li>
+                    <a href="#">App7</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Malthus-- Aventures in Wholandia</h1>
+                       <p> Exponential and Linear curves </p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Hide/Show Menu</a><br>
+                       <div class="titles"> Population Size </div><br>
+                       <div class="choices">
+                                               <div class="btn-group" data-toggle="buttons">
+                          <label id="option1" class="btn btn-primary active">
+                            <input type="radio" name="options" autocomplete="off" checked> 5 million
+                          </label>
+                          <label  id="option2" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 10 million
+                          </label>
+                          <label  id="option3" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 30 million
+                          </label>
+                        </div>
+                        </div>
+                       <br>
+                       <div class="titles"> Population Growth Rate </div> <br>
+                       <div class="choices">                       
+                        <div class="btn-group" data-toggle="buttons">
+                          <label id="option4" class="btn btn-primary active">
+                            <input type="radio" name="options" autocomplete="off" checked> 1% 
+                          </label>
+                          <label id="option5" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 3%
+                          </label>
+                          <label id="option6" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 5%
+                          </label>
+                        </div></div>
+                       <br>
+                       <div class="titles"> Food Supply Size </div> <br>
+                       <div class="choices"> 
+                                               <div class="btn-group" data-toggle="buttons">
+                          <label  id="option7" class="btn btn-primary active">
+                            <input type="radio" name="options" autocomplete="off" checked> 3 million 
+                          </label>
+                          <label id="option8" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 6 million
+                          </label>
+                          <label id="option9" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 9 million
+                          </label>
+                        </div>
+                        </div>
+                       <br>
+                       <div class="titles"> Food Supply Constant Growth </div> <br>
+                       <div class="choices"> <div class="btn-group" data-toggle="buttons">
+                          <label id="option10" class="btn btn-primary active">
+                            <input type="radio" name="options" autocomplete="off" checked> .5 
+                          </label>
+                          <label id="option11" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 1
+                          </label>
+                          <label id="option12" class="btn btn-primary">
+                            <input type="radio" name="options" autocomplete="off"> 3
+                          </label>
+                        </div>
+                        </div>
+                       <br>
+                       <button class="btn btn-default"id="draw" onclick="Draw();"> Draw! </button> 
+                       <canvas id="graph" width="600" height="400">
+   CANVAS NOT SUPPORTED IN THIS BROWSER!
+   </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript"
+src="./js/graph.js">
+</script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
