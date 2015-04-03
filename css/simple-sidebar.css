@@ -5,6 +5,23 @@
  */
 
 /* Toggle Styles */
+
+.logfont{
+    font-family: Signika;
+}
+
+h1{
+    font-size: 60px;
+}
+
+.center{
+    text-align: center;
+}
+
+.border{
+    border-style: solid;
+}
+
 .titles{
     font-size: 24px;
     display: inline-block;

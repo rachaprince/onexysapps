@@ -1,0 +1,240 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ONEXYS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Signika:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+     
+
+ <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="./logarithms.html">Logarithms</a>
+                </li>
+                <li>
+                    <a href="#">App2</a>
+                </li>
+                <li>
+                    <a href="#">App3</a>
+                </li>
+                <li>
+                    <a href="#">App4</a>
+                </li>
+                <li>
+                    <a href="#">App5</a>
+                </li>
+                <li>
+                    <a href="#">App6</a>
+                </li>
+                <li>
+                    <a href="#">App7</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+ <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="logfont center"> Decibles and Logarithms </h1>
+
+                    </div>
+                <div class="row">
+                    <h2 class="logfont"> The Logarithmic Scale </h2>
+                    <div class="col-lg-6 border">
+                    <div id="linear" style="width:100%; height:400px;"></div>
+                    </div>
+                    <div class="col-lg-6 border">
+                    <div id="logarithmic" style="width:100%; height:400px;"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h2 class="logfont"> The Decible Equation </h2>
+                    <h2 class="logfont center"> d= 10log<sub>10</sub><sup>I</sup>/<sub>I<sub>0</sub></sub></h2>
+
+                </div>
+
+
+                <div class="row">
+                    <h2 class="logfont"> Changing Initial Intensity </h2>
+                    <div class="col-lg-6 logfont center"> D = db </div> 
+                    <div class="col-lg-6 logfont center"> I<sub>0</sub> = 10<sup>-12)</sup><sup>W</sup>/<sub>m<sup>2</sup></sub> </div>
+                    <div class="col-lg-12 center"> 
+
+                     <script>
+                        $(function() {
+                            $( "#slider" ).slider();
+                        });
+                    </script>
+                            <div id="slider"></div>
+
+                    </div>
+                </div>
+                <div class="row"
+                    <div id="changeinitial" style="width=100%; height:800px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-c
+    <!-- /#wrapper -->
+
+</script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+<script >
+$( document ).ready(function() {
+$(function () { 
+    $('#changeinitial').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Linear Scale'
+        },
+        xAxis: {
+            tickInterval: 1
+        },
+        yAxis: {
+            tickInterval: 10, 
+             title: {
+                text: 'Loudness in linear scale (Pa)'
+            }
+        },
+        series: [{
+            name: 'Sounds',
+            data: [0.000056368, 0.000355656,0.012619147, 0.2, 20,63.245553203]
+        }]
+    });
+});
+
+});
+</script>
+
+
+
+<script >
+$( document ).ready(function() {
+$(function () { 
+    $('#linear').highcharts({
+
+        tooltip: {
+            formatter: function () {
+                return 'The sound of <b>' + this.x +
+                    '</b> is <b>' + this.y + '</b> Pa';
+            }
+        },
+
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Linear Scale'
+        },
+        xAxis: {
+            categories: ['paper', 'clock', 'regular conversation', 'busy road', 'concert', 'plane']
+        },
+        yAxis: {
+            tickInterval: 10, 
+             title: {
+                text: 'Loudness in linear scale (Pa)'
+            }
+        },
+        series: [{
+            name: 'Sounds',
+            data: [ 0.000056368, 0.000355656 ,0.012619147 ,0.2 ,20 ,63.245553203]
+        }]
+    });
+});
+
+});
+</script>
+
+    
+<script >
+$( document ).ready(function() {
+$(function () { 
+    $('#logarithmic').highcharts({
+
+        tooltip: {
+            formatter: function () {
+                return 'The sound of <b>' + this.x +
+                    '</b> is <b>' + this.y + '</b> decibles';
+            }
+        },
+
+
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Logarithmic Scale'
+        },
+        xAxis: {
+            categories: ['paper', 'clock', 'regular conversation', 'busy road', 'concert', 'plane']
+        },
+        yAxis: {
+            type: 'logarithmic',
+            title: {
+                text: 'Loudness in Logarithmic Scale (decibles)'
+            }
+        },
+        series: [{
+            name: 'Sounds',
+            data: [9,25,56,80,120,130]
+        }]
+    });
+});
+
+});
+</script>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
