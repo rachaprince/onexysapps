@@ -6,12 +6,29 @@
 
 /* Toggle Styles */
 
+.short{
+    width: 15%;
+}
+
+.inline{
+    display: inline-block;;
+}
+
+.spacer{
+    padding: 10px;
+    margin: 10px;
+}
+
 .logfont{
     font-family: Signika;
 }
 
 h1{
     font-size: 60px;
+}
+
+.medtext{
+  font-size: 25px;       
 }
 
 .center{

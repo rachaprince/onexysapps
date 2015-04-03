@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -89,18 +90,21 @@
                 </div>
 
 
-                <div class="row">
                     <h2 class="logfont"> Changing Initial Intensity </h2>
-                    <div class="col-lg-6 logfont center"> D = db </div> 
-                    <div class="col-lg-6 logfont center"> I<sub>0</sub> = 10<sup>-12)</sup><sup>W</sup>/<sub>m<sup>2</sup></sub> </div>
-                    <div class="col-lg-12 center"> 
-
-                     <script>
-                        $(function() {
-                            $( "#slider" ).slider();
-                        });
-                    </script>
-                            <div id="slider"></div>
+                <div class="row spacer">
+                    <div class="col-lg-6 logfont medtext"> D = 
+                    <input class="logfont medtext short" type="text" id="calculated" readonly style="border:0; font-family:Signika; font-size:25px;">
+                    db </div> 
+                    <div class="col-lg-6 logfont  medtext"> I<sub>0</sub> = 10<sup>-12</sup> *<sup>W</sup>/<sub>m<sup>2</sup></sub> </div>
+                </div>
+                <div class="row spacer">
+                    <div class="col-lg-4"> 
+                    <p>
+                        <div class="logfont medtext inline" for="amount">I =</div>
+                        <input  class="logfont medtext short" type="text" id="amount" readonly style="border:0; font-family:Signika; font-size:25px; "> <span class="logfont medtext"> <sup>W</sup>/<sub>m<sup>2</sup></sub> </span>
+                        </p>
+                    </div>
+                    <div class="col-lg-6 spacer" id="slider"></div>
 
                     </div>
                 </div>
@@ -235,6 +239,35 @@ $(function () {
 });
 </script>
 
+                     <script>
+    $( document ).ready(function() {
+      $(function() {
+        $( "#slider" ).slider({
+          range: "min",
+          min: 0,
+          max: 120,
+          value: 60,
+          slide: function( event, ui ) {
+            $( "#amount" ).val( ui.value );
+            $("#calculated").val(decCalc($( "#slider" ).slider( "value" ) ) );
+          }
+        });
+        $( "#amount" ).val( $( "#slider" ).slider( "value" ) );
+        $( "#calculated" ).val(decCalc($( "#slider" ).slider( "value" ) ) );
+      });
+
+        function decCalc( initial){
+            var value=0;
+            var threshold= Math.pow(10, -12);
+            value= initial/threshold ;
+            value=10*Math.log(value);
+            value=value/ Math.log(10);
+            return value;
+        }
+  });
+                     </script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
