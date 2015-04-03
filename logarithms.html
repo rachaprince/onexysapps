@@ -136,28 +136,38 @@
 $( document ).ready(function() {
 $(function () { 
     $('#changeinitial').highcharts({
+
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        tooltip: { enabled: false },
+
         chart: {
             type: 'spline'
         },
         title: {
-            text: 'Linear Scale'
+            text: 'Changing the Initial Value'
         },
         xAxis: {
-            tickInterval: 1
+            tickInterval: 1,
         },
         yAxis: {
             tickInterval: 10, 
              title: {
-                text: 'Loudness in linear scale (Pa)'
+                text: 'Loudness in logarithmic scale (decibles)'
             }
         },
         series: [{
             name: 'Sounds',
-            data: [0.000056368, 0.000355656,0.012619147, 0.2, 20,63.245553203]
-        }]
-    });
+            data: [[0.8534812, 119], [1.066852, 120.380], [1.920033, 122.83302],[2.7733814, 124.430028], [7.8933, 128.9726],[9.38668294, 129.725121], [12.1600211, 130.849343], [13.4400233, 131.284],[14.4933581, 131.551343], [15.786694, 131.9829]]
+    }]
 });
 
+});
 });
 </script>
 
