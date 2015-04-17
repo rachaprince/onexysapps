@@ -6,6 +6,14 @@
 
 /* Toggle Styles */
 
+.gray{
+    color: #4B4A4A;
+}
+
+.smalltext{
+    font-size: 20px;
+}
+
 .short{
     width: 15%;
 }
