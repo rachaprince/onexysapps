@@ -1,11 +1,48 @@
 
 
-        $('#showanswer').one('click', function (e) {
+        $('#showanswer').on('click', function (e) {
 
             var test = document.createElement("p");
             test.innerHTML = slope + "*x" + " + " + intercept +"=y";
             $("#answers").append(test);
 
+        })
+
+        $('#newequation').on('click', function(e){
+        
+           chart.series[0].setData([]);
+            var series = chart.series[0];
+            var point=[]; 
+            
+           positive= (Math.random() < .5);
+           postiveTwo= (Math.random() < .5);
+           fraction= (Math.random() < .5);
+
+
+            if(fraction){
+                slope= Math.floor((Math.random() * 10) + 1);
+                slope/= Math.floor((Math.random() * 10) + 1);
+            }
+            else{
+            slope= Math.floor((Math.random() * 10) + 1);
+            }
+            
+            intercept= Math.floor((Math.random() * 20) + 1);
+
+            if (!positive){
+                slope= (-slope);
+            }
+            if(!postiveTwo){
+                intercept= -intercept;
+            }
+
+            // add the point
+            for(var k=-20; k<=20; k++){
+            point=[0.5*k, (slope*0.1*k+intercept)]
+            chart.series[0].addPoint(point, true, false, true);
+            
+            }
+            
         })
         
         $('#checkanswer').on('click', function (e){
@@ -114,38 +151,75 @@
                 /*chart = this;*/
                 load: function( ){
     
-            var series = this.series[0];
-            var point=[]; 
+                var series = this.series[0];
+                var point=[]; 
             
-           positive= (Math.random() < .5);
-           postiveTwo= (Math.random() < .5);
-           fraction= (Math.random() < .5);
+                   positive= (Math.random() < .5);
+                   postiveTwo= (Math.random() < .5);
+                   fraction= (Math.random() < .5);
 
 
-            if(fraction){
-                slope= Math.floor((Math.random() * 10) + 1);
-                slope/= Math.floor((Math.random() * 10) + 1);
-            }
-            else{
-            slope= Math.floor((Math.random() * 10) + 1);
-            }
+                    if(fraction){
+                    slope= Math.floor((Math.random() * 10) + 1);
+                    slope/= Math.floor((Math.random() * 10) + 1);
+                    }
+                    else{
+                    slope= Math.floor((Math.random() * 10) + 1);
+                    }
             
-            intercept= Math.floor((Math.random() * 20) + 1);
+                    intercept= Math.floor((Math.random() * 20) + 1);
 
-            if (!positive){
-                slope= (-slope);
-            }
-            if(!postiveTwo){
-                intercept= -intercept;
-            }
+                    if (!positive){
+                        slope= (-slope);
+                    }
+                    if(!postiveTwo){
+                        intercept= -intercept;
+                    }
 
-            // add the point
-            for(var k=-20; k<=20; k++){
-            point=[0.5*k, (slope*0.1*k+intercept)]
-            this.series[0].addPoint(point, true, false, true);
+                    // add the point
+                    for(var k=-20; k<=20; k++){
+                    point=[0.5*k, (slope*0.1*k+intercept)]
+                    this.series[0].addPoint(point, true, false, true);
+                    
+                    }
+                    }
+
+               /* redraw: function(){
+                     
+                    var series = this.series[0];
+                    var point=[]; 
+                    
+                   positive= (Math.random() < .5);
+                   postiveTwo= (Math.random() < .5);
+                   fraction= (Math.random() < .5);
+
+
+                    if(fraction){
+                        slope= Math.floor((Math.random() * 10) + 1);
+                        slope/= Math.floor((Math.random() * 10) + 1);
+                    }
+                    else{
+                    slope= Math.floor((Math.random() * 10) + 1);
+                    }
+                    
+                    intercept= Math.floor((Math.random() * 20) + 1);
+
+                    if (!positive){
+                        slope= (-slope);
+                    }
+                    if(!postiveTwo){
+                        intercept= -intercept;
+                    }
+
+                    // add the point
+                    for(var k=-20; k<=20; k++){
+                    point=[0.5*k, (slope*0.1*k+intercept)]
+                    this.series[0].addPoint(point, true, false, true);
+                    
+                    }
+                }
+            */
             
-            }
-            }
         },
 
      
