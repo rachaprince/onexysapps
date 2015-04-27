@@ -132,6 +132,22 @@
         var container= document.getElementById("graphscreen");
 
         chart = new Highcharts.Chart({
+        title: '',
+        xAxis: {
+        plotLines: [{
+                color: 'black',
+                width: 2,
+                value: 0
+            }],
+        gridLineWidth: 1
+        },
+        yAxis: {
+             plotLines: [{
+                color: 'black',
+                width: 2,
+                value: 0
+            }]
+        },
         series: [{
             showInLegend: false,  
             name: '',
@@ -146,7 +162,10 @@
         },
         chart: {
             renderTo: container,
-            defaultSeriesType: 'spline',
+           /* defaultSeriesType: 'spline',*/
+           type: 'line',
+           title: '',
+           
             events: {
                 /*chart = this;*/
                 load: function( ){
@@ -224,21 +243,14 @@
 
      
 
-        chart: {
+      /*  chart: {
             type: 'line'
         },
         title: {
             text: ''
         },
-        xAxis: {
-            tickInterval: 1,
-        },
-        yAxis: {
-            tickInterval: 1, 
-             title: {
-                text: ''
-            }
-        },
+       
+        },*/
 }
 });
 });
