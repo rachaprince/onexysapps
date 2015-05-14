@@ -140,13 +140,13 @@ function testEquation(domain, range){    //Run test on four values
 
     var x= 20;
     var y=slope*x+intercept;
-        if (Math.abs(eval(domain)-eval(range)) >0.0001){
+        if (Math.abs(eval(domain)-eval(range)) >0.001){
             return "Incorrect, Try Again!";
         }
 
     var x= -17.8;
     var y=slope*x+intercept;
-        if (Math.abs(eval(domain)-eval(range)) >0.0001){
+        if (Math.abs(eval(domain)-eval(range)) >0.001){
            return "Incorrect, Try Again!";
         }
 
