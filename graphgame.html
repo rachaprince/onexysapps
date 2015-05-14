@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/mystyle.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Signika:400,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,33 +33,13 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Home
-                    </a>
-                </li>
                 <li>
                     <a href="./logarithms.html">Logarithms</a>
                 </li>
                 <li>
                     <a href="./graphgame.html">Graph Game</a>
                 </li>
-                <li>
-                    <a href="#">App3</a>
-                </li>
-                <li>
-                    <a href="#">App4</a>
-                </li>
-                <li>
-                    <a href="#">App5</a>
-                </li>
-                <li>
-                    <a href="#">App6</a>
-                </li>
-                <li>
-                    <a href="#">App7</a>
-                </li>
-            </ul>
+                
         </div>
 
         </script>
@@ -70,112 +50,47 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
+
                 <div class="row">
                     <div class="col-lg-12">
+	                   <h1 class="center logfont"> Guess that Graph </h1>
+	               </div>
+                </div>
 
-	<h1 class="center logfont"> Guess that Graph </h1>
-	<!-- CSS styling to highlight title -->
-</div>
-</div>
-<div class="row">
- 	<div class="col-lg-8 col-lg-offset-2">
-	<div id="graphscreen"> </div>
-	</div>
-</div>
+                <div class="row">
+ 	               <div class="col-lg-8 col-lg-offset-2">
+	                    <div id="graphscreen"> </div>
+	               </div>
+                </div>
 
+    
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="logfont center smalltext"> Please write your equation in the format y= f(x) <br>
+                                                    Please do not use implicit multiplication. Write * for multiplication.  </div><br>
+                        <div class="gray logfont smalltext center"> ex. y=2*(x+2) , y=x , y=5/4*x-4 </div> <br>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <input  id="equation" class="logfont  form-control" placeholder="Enter Equation (ex. y=x)"> </input> <br>
+                    </div>
+                </div>
+            </div>
 
+        <div class="center row"> 
+                <div id="answers" class="logfont smalltext center"></div>
+                
+                <button id="checkanswer" class="btn btn-default" type="submit">Check Answer </button>
+                <button id="showanswer" class="btn btn-default" type="submit">Show Answer  </button>
+                <button id="newequation" class="btn btn-default" type="submit">New Equation </button>
+        </div>
 
-
-       <!-- Data Array Creation
-        1. Call Equation maker
-        2. chart should be global variable
-        3. push to chart
-
-        
-		for (var k=-50;k<50 k++)
-		series.data.addpoint([0.01*k, y=eq variable])
-
-	   function requestData() {
-    $.ajax({
-        url: 'live-server-data.php',
-        success: function(point) {
-            var series = chart.series[0],
-                shift = series.data.length > 20; // shift if the series is 
-                                                 // longer than 20
-
-            // add the point
-            chart.series[0].addPoint(point, true, shift);
-            
-            // call it again after one second
-            setTimeout(requestData, 1000);    
-        },
-        cache: false
-    });
-} -->
-
-		<!-- EQUATION Maker
-		1. return math equation (global variable)
-		2. use random to determine fraction or decimal
-		3. choose 1-2 integers (floor with math.floor)
-		4. **
- * Returns a random integer between min (inclusive) and max (inclusive)
- * Using Math.round() will give you a non-uniform distribution!
- */
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}	 -->
-<div class="row">
-<div class="col-lg-8 col-lg-offset-2">
-<div class="logfont center smalltext"> Please use x as the domain variable and y as the range variable.<br>
-Please do not use implicit multiplication. Write * for multiplication.  </div><br>
-
-<div class="gray logfont smalltext center"> ex. 2*x+8=7*y , y=x , 5/4*x-4=9/5*y </div> <br>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-8 col-lg-offset-2">
-<input  id="equation" class="logfont  form-control" placeholder="Enter Equation"> </input> <br>
-</div>
-</div>
-</div>
-
-<div class="center row"> 
- <button id="checkanswer" class="btn btn-default" type="submit">Check Answer </button>
- <button id="showanswer" class="btn btn-default" type="submit">Show Answer  </button>
- <button id="newequation" class="btn btn-default" type="submit">New Equation </button>
- </div>
-
-<div id="answers" class="logfont smalltext center"></div>
-  <!--  CHECK ANSWER
-   1. get value of equation in box
-   1a. assign value 1 =x 1=y
-   2. if == false add div c
-   3. assign other values to x and y, eval and see if it passes all the tests
-   4. display a if all true, b otherwise-->
-   <!-- DIV A
-   "box. value is correct" -->
-   <!-- DIV B
-   "box value is incorrect" -->
-   <!-- DIV C
-   "box.value is incorrectly formatted" -->
-
-   <!-- SHOW ANSWER 
-	
-   -->
-
-   <!-- NEW GRAPH
-   CALL new graph function -->
+ 
 </body>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -187,7 +102,8 @@ Please do not use implicit multiplication. Write * for multiplication.  </div><b
     var positive;
     var postiveTwo;;
     var fraction;
-    var slope;
+    var slopeN;
+    var slopeD;
     var intercept;
 </script>
 <script type='text/javascript' src='js/graphgame.js'></script> 
